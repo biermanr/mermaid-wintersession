@@ -19,11 +19,13 @@ participant sys as Our System
 participant ext as External System
 actor curator as Curator
 
+note right of curator: Will be approving things later
 user -) sys: create thingamajig
 sys -->> ext: mint id
 sys --> sys: wait
+note over sys,ext: 5 seconds to mint ID
 ext -->> sys: send id
 sys -) user: show id
 
-note left of user: Browser Client
+
 ```
