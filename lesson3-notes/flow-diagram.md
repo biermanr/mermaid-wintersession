@@ -25,4 +25,5 @@ sys --> sys: wait
 ext -->> sys: send id
 sys -) user: show id
 
+note left of user: Browser Client
 ```
