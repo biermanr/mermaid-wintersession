@@ -24,15 +24,19 @@ participant ext as External System
 actor curator as Curator
 note over curator: Will be approving things later
 
-user -) sys: create thingamajig
-sys -->> ext: mint id
-sys --> sys: wait
-note over sys,ext: 5 seconds to mint id
-ext -->> sys: send id
-sys -) user: show id
+rect lightblue
+   user -) sys: create thingamajig
+   sys -->> ext: mint id
+   sys --> sys: wait
+   note over sys,ext: 5 seconds to mint id
+   ext -->> sys: send id
+   sys -) user: show id
+end
 
-user -) sys: update thingamajig
-opt External system needs information
-  sys -->> ext: send updated information
+rect lightred
+   user -) sys: update thingamajig
+   opt External system needs information
+     sys -->> ext: send updated information
+   end
 end
 ```
