@@ -30,5 +30,8 @@ note over sys,ext: 5 seconds to mint id
 ext -->> sys: send id
 sys -) user: show id
 
+opt Update External System
+   sys ->> ext: ...
+end
 
 ```
