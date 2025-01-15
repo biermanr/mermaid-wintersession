@@ -12,6 +12,19 @@ How actors interact? Take the first requirement `A User created a new object: I 
 
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 
 sequenceDiagram
 title  System Requirements Diagram
@@ -22,5 +35,9 @@ participant sys as Our System
 participant ext as External System
 actor curator as Curator
 
-
+user ->> sys : Create thingamajig
+sys ->> ext : Mint ID
+sys ->> sys : Wait
+ext ->> sys : Send ID
+sys ->> user : Show ID
 ```
