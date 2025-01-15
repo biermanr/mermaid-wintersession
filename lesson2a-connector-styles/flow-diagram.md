@@ -29,10 +29,10 @@ participant sys as Our System
 participant ext as External System
 actor curator as Curator
 
-user ->> sys: create thingamajig
+user -> sys: create thingamajig
 sys ->> ext: mint id
 sys ->> sys: wait
-ext ->> sys: send id
-sys ->> user: show id
+ext --> sys: send id
+sys -) user: show id
 
 ```
